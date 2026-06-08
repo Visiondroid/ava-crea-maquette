@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AVA Créa — Vendez 2× plus grâce à des vidéos qui vous rendent visible</title>
+<meta name="description" content="Agence de création de contenu vidéo pour les réseaux sociaux. Des vidéos pensées pour générer des ventes, sans budget publicitaire." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07070c; --bg2:#0d0d16; --card:#12121d; --line:rgba(255,255,255,.08);
+  --txt:#eef0f6; --muted:#a3a7b8;
+  --b:#4f7cff; --v:#8b5cf6; --c:#22d3ee;
+  --grad:linear-gradient(100deg,#4f7cff 0%,#8b5cf6 48%,#22d3ee 100%);
+  --grad-soft:linear-gradient(100deg,rgba(79,124,255,.18),rgba(139,92,246,.14),rgba(34,211,238,.16));
+  --maxw:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.dn{font-family:Sora,sans-serif;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.grad-txt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;align-items:center;gap:.5em;font-weight:600;font-size:.98rem;padding:14px 26px;border-radius:999px;cursor:pointer;border:0;transition:.25s transform,.25s box-shadow,.25s background}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 8px 30px rgba(79,124,255,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(139,92,246,.5)}
+.btn-ghost{background:rgba(255,255,255,.05);color:var(--txt);border:1px solid var(--line)}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.eyebrow{font-family:Inter;font-weight:600;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase}
+.glow{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.glow:before,.glow:after{content:"";position:absolute;border-radius:50%;filter:blur(120px);opacity:.5}
+.glow:before{width:600px;height:600px;background:radial-gradient(circle,rgba(79,124,255,.5),transparent 70%);top:-180px;left:-120px}
+.glow:after{width:520px;height:520px;background:radial-gradient(circle,rgba(139,92,246,.45),transparent 70%);top:300px;right:-150px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(7,7,12,.7);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-family:Sora;font-weight:800;font-size:1.25rem}
+.logo img{height:38px;width:auto}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-size:.95rem;color:var(--muted);font-weight:500;transition:.2s}
+.nav-links a:hover{color:var(--txt)}
+.nav-links a.btn-primary,.nav-links a.btn-primary:hover{color:#fff}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+@media(max-width:880px){.nav-links{display:none}.menu-btn{display:block}}
+
+/* HERO */
+.hero{position:relative;text-align:center;padding:90px 0 40px}
+.hero .badge{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);border:1px solid var(--line);background:rgba(255,255,255,.03);padding:7px 16px;border-radius:999px;margin-bottom:26px}
+.hero .badge b{color:var(--c)}
+.hero h1{font-size:clamp(2.1rem,5.4vw,4rem);font-weight:800;max-width:14ch;margin:0 auto}
+.hero p.sub{color:var(--muted);font-size:clamp(1rem,1.5vw,1.18rem);max-width:60ch;margin:22px auto 32px}
+.hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.socials{display:flex;gap:16px;justify-content:center;margin-top:30px;color:var(--muted)}
+.socials span{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;font-size:1.1rem;transition:.2s}
+.socials span:hover{color:#fff;border-color:var(--v);transform:translateY(-2px)}
+
+/* MARQUEE logos */
+.marquee{margin-top:52px;position:relative;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
+.marquee-track{display:flex;gap:18px;width:max-content;animation:scroll 38s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.chip{height:78px;min-width:150px;display:grid;place-items:center;background:#fff;border-radius:14px;padding:14px 22px}
+.chip img{max-height:46px;max-width:120px;object-fit:contain}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* SECTION base */
+section{padding:74px 0}
+.sec-head{text-align:center;max-width:760px;margin:0 auto 50px}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.6rem);font-weight:700}
+.sec-head p{color:var(--muted);margin-top:14px;font-size:1.05rem}
+.reveal{opacity:0;transform:translateY(28px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:38px 20px}
+.stat .n{font-family:Sora;font-weight:800;font-size:clamp(2.2rem,5vw,3.4rem)}
+.stat .l{color:var(--muted);margin-top:6px;font-weight:500}
+@media(max-width:720px){.stats{grid-template-columns:1fr;gap:14px}}
+
+/* VIDEOS */
+.vids{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.vid{position:relative;aspect-ratio:9/16;border-radius:18px;border:1px solid var(--line);overflow:hidden;background:linear-gradient(160deg,#171727,#0e0e18);display:grid;place-items:center}
+.vid:before{content:"";position:absolute;inset:0;background:var(--grad-soft);opacity:.5}
+.vid .play{position:relative;width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.3);display:grid;place-items:center;font-size:1.3rem;color:#fff}
+.vid .tag{position:absolute;bottom:12px;left:12px;right:12px;font-size:.8rem;color:var(--muted);background:rgba(0,0,0,.45);border-radius:8px;padding:6px 10px}
+@media(max-width:880px){.vids{grid-template-columns:repeat(2,1fr)}}
+
+/* OFFRES */
+.offres{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.offre{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:36px;position:relative;overflow:hidden}
+.offre:after{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)}
+.offre h3{font-size:1.4rem;margin-bottom:6px}
+.offre .lead{color:var(--muted);margin-bottom:20px}
+.offre ul{list-style:none;display:grid;gap:11px}
+.offre li{display:flex;gap:11px;align-items:flex-start;font-size:.96rem}
+.offre li:before{content:"✓";color:var(--c);font-weight:800;margin-top:1px}
+.offre .end{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-weight:600}
+@media(max-width:820px){.offres{grid-template-columns:1fr}}
+
+/* COMPARE */
+.cmp{border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.cmp .row{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.cmp .row:first-child{border-top:0}
+.cmp .c{padding:18px 22px;font-size:.95rem}
+.cmp .c.us{background:linear-gradient(90deg,rgba(79,124,255,.12),rgba(139,92,246,.06));font-weight:600}
+.cmp .c.them{color:var(--muted)}
+.cmp .head .c{font-family:Sora;font-weight:700;font-size:1.02rem}
+.cmp .head .us{color:#fff}
+@media(max-width:720px){.cmp .c{padding:13px 14px;font-size:.86rem}}
+
+/* PROCESS */
+.steps{display:grid;gap:16px;max-width:820px;margin:0 auto}
+.step{display:grid;grid-template-columns:64px 1fr;gap:20px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px}
+.step .num{font-family:Sora;font-weight:800;font-size:1.5rem;width:56px;height:56px;display:grid;place-items:center;border-radius:14px;background:var(--grad-soft);border:1px solid var(--line)}
+.step .num span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.step h4{font-family:Sora;font-size:1.08rem;margin-bottom:2px}
+.step p{color:var(--muted);font-size:.94rem;margin:0}
+
+/* AVIS marquee */
+.avis-track{display:flex;gap:18px;width:max-content;animation:scroll 50s linear infinite}
+.avis-mq:hover .avis-track{animation-play-state:paused}
+.avis{width:480px;max-width:86vw;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 28px;display:flex;flex-direction:column;justify-content:space-between}
+.avis .stars{color:#ffc857;margin-bottom:10px;letter-spacing:2px}
+.avis p{font-size:1rem;margin-bottom:18px}
+.avis .who{display:flex;align-items:center;gap:12px}
+.avis .who .av{width:40px;height:40px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-weight:700;color:#fff}
+.avis .who b{display:block;font-size:.92rem}
+.avis .who small{color:var(--muted)}
+
+/* FAQ */
+.faq{max-width:820px;margin:0 auto;display:grid;gap:12px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:0 22px}
+.faq summary{cursor:pointer;list-style:none;padding:20px 0;font-family:Sora;font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";font-size:1.5rem;color:var(--c);transition:.2s;line-height:1}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq .a{color:var(--muted);padding:0 0 20px;font-size:.96rem;white-space:pre-line}
+.faq-more{text-align:center;margin-top:28px}
+
+/* FINAL CTA */
+.final{position:relative;text-align:center;border:1px solid var(--line);border-radius:28px;padding:64px 24px;background:radial-gradient(circle at 50% 0%,rgba(139,92,246,.22),transparent 70%),var(--card);overflow:hidden}
+.final h2{font-size:clamp(1.8rem,4vw,2.8rem);max-width:18ch;margin:0 auto 16px}
+.final p{color:var(--muted);max-width:54ch;margin:0 auto 28px}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:48px 0 30px;margin-top:74px;color:var(--muted)}
+footer .grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
+footer .logo img{height:34px}
+footer small{display:block;margin-top:18px;font-size:.82rem;opacity:.7}
+.note{position:fixed;bottom:14px;left:14px;z-index:99;background:#1a1426;border:1px solid var(--v);color:#d9c9ff;font-size:.74rem;padding:8px 12px;border-radius:10px;max-width:280px}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo"><img src="images/logo-ava-noir.png" alt="AVA Créa"></a>
+    <div class="nav-links">
+      <a href="#offres">Offres</a>
+      <a href="#projets">Projets</a>
+      <a href="#process">Méthode</a>
+      <a href="#avis">Avis</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="btn btn-primary" style="padding:10px 20px">Booster mes ventes</a>
+    </div>
+    <button class="menu-btn">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">🚀 Agence spécialisée <b>réseaux sociaux</b></span>
+    <h1>Vendez <span class="grad-txt">2 fois plus</span> grâce à des vidéos qui vous rendent visible.</h1>
+    <p class="sub">Faites décoller vos ventes et attirez plus de clients en boutique grâce à des vidéos percutantes conçues pour capter l'attention sur les réseaux sociaux.</p>
+    <div class="cta">
+      <a href="#contact" class="btn btn-primary">Booster mes ventes →</a>
+      <a href="#projets" class="btn btn-ghost">Voir nos projets réalisés</a>
+    </div>
+    <div class="socials">
+      <span>📸</span><span>🎵</span><span>▶️</span><span>📘</span><span>in</span>
+    </div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track" id="logos"></div>
+  </div>
+</header>
+
+<!-- STATS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow grad-txt">Nos résultats</span>
+      <h2>Les résultats de nos clients témoignent de notre expertise.</h2></div>
+    <div class="stats">
+      <div class="stat reveal"><div class="n grad-txt">+120M</div><div class="l">de vues générées</div></div>
+      <div class="stat reveal"><div class="n grad-txt">+40</div><div class="l">clients satisfaits</div></div>
+      <div class="stat reveal"><div class="n grad-txt">x2.6</div><div class="l">de croissance du chiffre d'affaires</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Des vidéos qui boostent vos ventes <span class="grad-txt">sans dépenser 1€ en pub</span></h2>
+      <p>Quel que soit votre secteur d'activité, notre agence développe votre présence sur les réseaux sociaux avec des contenus qui génèrent des résultats concrets.</p>
+    </div>
+    <div class="vids">
+      <div class="vid reveal"><div class="play">▶</div><div class="tag">Black &amp; White Burger</div></div>
+      <div class="vid reveal"><div class="play">▶</div><div class="tag">Ti Galik</div></div>
+      <div class="vid reveal"><div class="play">▶</div><div class="tag">Tell &amp; Cash</div></div>
+      <div class="vid reveal"><div class="play">▶</div><div class="tag">Anas Boussaida</div></div>
+    </div>
+    <div style="text-align:center;margin-top:34px" class="reveal"><a href="#projets" class="btn btn-ghost">Voir nos projets →</a></div>
+  </div>
+</section>
+
+<!-- OFFRES -->
+<section id="offres">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow grad-txt">Nos offres</span>
+      <h2>Faites la différence sur les réseaux sociaux.</h2>
+      <p>Un accompagnement adapté à vos objectifs et pensé pour générer des résultats.</p></div>
+    <div class="offres">
+      <div class="offre reveal">
+        <h3>Formation Réseaux Sociaux</h3>
+        <p class="lead">Apprenez à faire de vos réseaux sociaux une véritable machine à clients.</p>
+        <ul>
+          <li>Créer du contenu de qualité de A à Z, même sans expérience</li>
+          <li>Mettre en place une stratégie adaptée à votre activité</li>
+          <li>Produire en 3 h assez de contenu pour 1 mois</li>
+          <li>Tourner et monter des vidéos avec votre seul smartphone</li>
+          <li>Comprendre les algorithmes TikTok, Instagram, Facebook, YouTube</li>
+          <li>Analyser vos performances pour progresser en continu</li>
+          <li>Un accompagnement personnalisé à chaque étape</li>
+        </ul>
+        <div class="end grad-txt">Devenez 100 % autonome dans votre création de contenu.</div>
+      </div>
+      <div class="offre reveal">
+        <h3>Création de Contenu &amp; Community Management</h3>
+        <p class="lead">Transformez vos réseaux sociaux en véritable levier de croissance.</p>
+        <ul>
+          <li>Stratégie éditoriale sur mesure</li>
+          <li>Production de contenus vidéo</li>
+          <li>Publication et planification des contenus</li>
+          <li>Gestion et animation de votre communauté</li>
+          <li>Réponses aux commentaires et messages</li>
+          <li>Analyse des résultats et optimisation de la stratégie</li>
+          <li>Mise à disposition de figurants selon les besoins</li>
+        </ul>
+        <div class="end grad-txt">Chaque semaine, du contenu pensé pour attirer des clients.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>Votre entreprise mérite ce qu'il y a de mieux.</h2>
+      <p>Nous fournissons des contenus et un accompagnement d'excellence pour vous démarquer durablement.</p></div>
+    <div class="cmp reveal">
+      <div class="row head"><div class="c us">Notre approche</div><div class="c them">Les autres agences</div></div>
+      <div class="row"><div class="c us">Vidéos pensées pour générer des ventes</div><div class="c them">Contenus publiés surtout pour la visibilité</div></div>
+      <div class="row"><div class="c us">Codes du divertissement + marketing moderne</div><div class="c them">Contenus trop publicitaires qui lassent</div></div>
+      <div class="row"><div class="c us">Des vues obtenues naturellement</div><div class="c them">Des vidéos qui nécessitent un budget pub</div></div>
+      <div class="row"><div class="c us">Agence 100 % spécialisée réseaux sociaux</div><div class="c them">Expertise diluée sur de nombreux services</div></div>
+      <div class="row"><div class="c us">Un community management qui crée une vraie communauté</div><div class="c them">Une simple gestion des publications</div></div>
+      <div class="row"><div class="c us">Nombre de clients limité = qualité garantie</div><div class="c them">Une organisation orientée volume</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow grad-txt">Notre méthode</span>
+      <h2>Une stratégie pensée pour des résultats concrets.</h2>
+      <p>Chaque entreprise est différente : nous adaptons notre approche à votre activité, votre marché et vos objectifs.</p></div>
+    <div class="steps">
+      <div class="step reveal"><div class="num"><span>01</span></div><div><h4>Onboarding &amp; objectifs</h4><p>On comprend votre activité, votre marché et vos ambitions.</p></div></div>
+      <div class="step reveal"><div class="num"><span>02</span></div><div><h4>Stratégie de contenu</h4><p>Une ligne éditoriale sur mesure, adaptée à votre cible.</p></div></div>
+      <div class="step reveal"><div class="num"><span>03</span></div><div><h4>Scripts &amp; concepts</h4><p>Des idées de vidéos conçues pour capter l'attention et vendre.</p></div></div>
+      <div class="step reveal"><div class="num"><span>04</span></div><div><h4>Tournage</h4><p>Captation pro (avec ou sans vous à l'écran, figurants si besoin).</p></div></div>
+      <div class="step reveal"><div class="num"><span>05</span></div><div><h4>Montage</h4><p>Des vidéos dynamiques aux codes des réseaux sociaux.</p></div></div>
+      <div class="step reveal"><div class="num"><span>06</span></div><div><h4>Publication &amp; planification</h4><p>Mise en ligne au bon moment, sur les bons formats.</p></div></div>
+      <div class="step reveal"><div class="num"><span>07</span></div><div><h4>Analyse &amp; optimisation</h4><p>On mesure, on ajuste, on améliore les résultats en continu.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section id="avis" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>Nos clients en parlent mieux que nous.</h2>
+      <p>Nos clients ont vu leurs ventes doubler en moyenne après 2 mois d'accompagnement.</p></div>
+  </div>
+  <div class="avis-mq" style="-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)">
+    <div class="avis-track" id="avis-track"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow grad-txt">FAQ</span>
+      <h2>Besoin d'un renseignement ?</h2>
+      <p>Nous prenons le temps de répondre à vos questions pour vous orienter vers la solution la plus adaptée.</p></div>
+    <div class="faq" id="faq-list"></div>
+    <div class="faq-more reveal"><a href="#" class="btn btn-ghost">Voir toutes les questions →</a></div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="contact">
+  <div class="wrap">
+    <div class="final reveal">
+      <h2>Donnons à votre entreprise la <span class="grad-txt">visibilité qu'elle mérite.</span></h2>
+      <p>Discutons de votre projet et construisons ensemble une stratégie adaptée à votre entreprise, votre marché et vos ambitions.</p>
+      <a href="#" class="btn btn-primary">Prendre rendez-vous →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap grid">
+    <a href="#" class="logo"><img src="images/logo-ava-noir.png" alt="AVA Créa"></a>
+    <div style="display:flex;gap:26px;flex-wrap:wrap">
+      <a href="#offres">Offres</a><a href="#projets">Projets</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="wrap"><small>© 2026 AVA Créa — Création de contenu &amp; community management · Expert en croissance sur les réseaux sociaux</small></div>
+</footer>
+
+
+<script>
+// logos défilants (x2 pour boucle continue)
+const clients=[["japanim","client-japanim.png"],["O Bloc","client-obloc.jpg"],["Black & White Burger","client-bwburger.png"],["Sushi Shop","client-sushishop.png"],["Pink House","client-pinkhouse.jpeg"],["Comptoir de Mathilde","client-comptoirmathilde.png"],["BK Coiffure","client-bkcoiffure.jpeg"],["Tell & Cash","client-tellandcash.png"],["Ti Galik","client-tigalik.png"],["La Brigade","client-labrigade.png"],["Laiterie Gilbert","client-laiteriegilbert.svg"]];
+const lt=document.getElementById('logos');
+[...clients,...clients].forEach(([n,f])=>{lt.insertAdjacentHTML('beforeend',`<div class="chip"><img src="images/clients/${f}" alt="${n}" loading="lazy"></div>`);});
+
+// avis (placeholders à remplacer par les vrais)
+const avis=[
+ ["★★★★★","Depuis qu'AVA gère nos réseaux, on a doublé les réservations en 2 mois. Des vidéos qui donnent vraiment envie.","Black & White Burger","Restauration"],
+ ["★★★★★","Enfin une agence qui pense ventes et pas juste \"likes\". Résultats concrets dès les premières semaines.","Ti Galik","Commerce"],
+ ["★★★★★","Accompagnement au top, vidéos pro et beaucoup plus de clients en boutique.","Tell & Cash","Retail"],
+ ["★★★★★","Je suis passé de zéro présence à des milliers de vues sans dépenser en pub. Bluffant.","Anas Boussaida","Entrepreneur"],
+ ["★★★★★","Équipe réactive, créative et orientée résultats. Je recommande à 100 %.","O Bloc","Loisirs"],
+];
+const at=document.getElementById('avis-track');
+[...avis,...avis].forEach(([s,t,n,r])=>{at.insertAdjacentHTML('beforeend',`<div class="avis"><div class="stars">${s}</div><p>"${t}"</p><div class="who"><div class="av">${n[0]}</div><div><b>${n}</b><small>${r}</small></div></div></div>`);});
+
+// FAQ (9 questions homepage)
+const faq=[
+ ["Cette offre correspond-elle à mon entreprise ?","Chez AVA, nous accompagnons les PME, commerces, startups et entreprises ambitieuses qui veulent développer leur notoriété et accélérer leur croissance grâce aux réseaux sociaux. Chaque stratégie est construite sur mesure selon votre marché, vos objectifs et vos ressources."],
+ ["Les réseaux sociaux peuvent-ils vraiment générer des résultats ?","Oui, à condition de s'appuyer sur une stratégie solide et de travailler avec régularité. Nous créons des contenus vidéo pensés pour des objectifs concrets : visibilité, image de marque, prospects qualifiés et croissance."],
+ ["Pourquoi choisir AVA plutôt qu'une autre agence ?","Parce que chaque vidéo est pensée comme un outil de développement, pas pour remplir un calendrier. Stratégie marketing + contenus engageants + accompagnement personnalisé, avec une vision long terme orientée résultats."],
+ ["Comment se déroule votre accompagnement création de contenu ?","Un accompagnement entièrement personnalisé : stratégie, création/optimisation des profils, scripts, tournages, montage, publication, community management, analyse. Vous pouvez aussi choisir uniquement les services dont vous avez besoin."],
+ ["Les contenus seront-ils adaptés à mon image de marque ?","Oui. Avant toute création, nous prenons le temps de comprendre votre activité, votre marché et vos valeurs pour concevoir des contenus cohérents avec votre identité et adaptés à votre audience."],
+ ["Comment commencer à travailler ensemble ?","La première étape est un rendez-vous découverte. À l'issue de cet échange, nous vous présentons une proposition adaptée avec une stratégie claire et un plan d'action personnalisé."],
+ ["Combien coûtent vos prestations ?","Pas de tarif unique : le coût dépend du volume de contenu, de la fréquence des tournages et de vos objectifs. Nous construisons une solution sur mesure. Le premier échange est gratuit et sans engagement."],
+ ["Formation ou création de contenu : comment choisir ?","La formation est idéale pour gérer vous-même vos réseaux sur le long terme. La création de contenu convient aux entreprises qui veulent gagner du temps et déléguer à une équipe spécialisée. On vous aide à choisir lors du premier échange."],
+ ["En quoi consiste votre formation ?","Elle vous apprend à gérer vos réseaux en autonomie : trouver des idées, créer des contenus performants, comprendre la visibilité, convertir votre audience en clients et mettre en place une stratégie durable — avec accompagnement et analyse de vos résultats."],
+];
+const fl=document.getElementById('faq-list');
+faq.forEach(([q,a])=>{fl.insertAdjacentHTML('beforeend',`<details><summary>${q}</summary><div class="a">${a}</div></details>`);});
+
+// reveal au scroll (ou tout afficher en mode ?static pour capture)
+if(location.search.includes('static')){
+  document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in'));
+}else{
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+}
+</script>
+</body>
+</html>
