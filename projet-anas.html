@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Anas Boussaida : de zéro présence aux milliers de vues — AVA Créa</title>
+<meta name="description" content="Étude de cas en préparation : comment Anas Boussaida est passé d'une présence nulle sur les réseaux sociaux à des milliers de vues, sans publicité." />
+<meta name="robots" content="noindex,follow" />
+<link rel="canonical" href="https://avacrea.fr/projet-anas.html" />
+<link rel="icon" type="image/png" href="images/logo-ava-noir.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="projet.css">
+</head>
+<body>
+<div class="glow"></div>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="logo" aria-label="AVA Créa - accueil"><img src="images/logo-ava-noir.png" alt="AVA Créa"></a>
+    <div class="nav-links">
+      <a href="index.html#offres">Offres</a>
+      <a href="projets.html">Projets</a>
+      <a href="index.html#process">Méthode</a>
+      <a href="index.html#avis">Avis</a>
+      <a href="faq.html">FAQ</a>
+      <a href="index.html#contact" class="btn btn-primary" style="padding:10px 20px">Booster mes ventes</a>
+    </div>
+    <button class="menu-btn" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+
+    <a href="projets.html" class="back-link">← Tous les projets</a>
+
+    <header class="case-hero" style="display:block;text-align:center;border-bottom:0;padding-bottom:30px">
+      <span class="label" style="color:var(--c)">Cas client · Personal branding</span>
+      <h1 style="margin:18px auto 14px;max-width:24ch">Anas Boussaida : <span class="grad-txt">de zéro présence aux milliers de vues</span> sans pub.</h1>
+    </header>
+
+    <div class="coming reveal">
+      <h3>Étude de cas en préparation</h3>
+      <p>L'histoire complète d'Anas Boussaida (point de départ, premier déclic viral, performances actuelles) sera publiée ici très prochainement.</p>
+      <p style="margin-top:18px"><a href="projets.html" class="btn btn-ghost">Voir les autres projets</a></p>
+    </div>
+
+    <nav class="case-nav reveal">
+      <a href="projet-tigalik.html" class="btn btn-ghost">← Projet précédent : Ti'Galik</a>
+      <a href="projet-bwburger.html" class="btn btn-ghost">Retour au début : Black and White Burger →</a>
+    </nav>
+
+    <section class="final reveal">
+      <h2>Discutons de <span class="grad-txt">votre projet</span>.</h2>
+      <p>30 minutes d'échange pour comprendre votre situation et vous proposer la meilleure approche. Gratuit et sans engagement.</p>
+      <a href="index.html#contact" class="btn btn-primary">Prendre rendez-vous →</a>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap grid">
+    <a href="index.html" class="logo" aria-label="AVA Créa - accueil"><img src="images/logo-ava-noir.png" alt="AVA Créa"></a>
+    <div class="links">
+      <a href="index.html#offres">Offres</a>
+      <a href="projets.html">Projets</a>
+      <a href="faq.html">FAQ</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <div>© 2026 AVA Créa — Création de contenu &amp; community management</div>
+    <div class="links">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
