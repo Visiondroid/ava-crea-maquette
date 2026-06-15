@@ -23,11 +23,21 @@
 <style>
 :root{
   --bg:#07070c; --bg2:#0d0d16; --card:#12121d; --line:rgba(255,255,255,.08);
-  --txt:#eef0f6; --muted:#a3a7b8;
+  --txt:#eef0f6; --muted:#a3a7b8; --ink:#fff;
   --b:#4f7cff; --v:#8b5cf6; --c:#22d3ee;
   --grad:linear-gradient(100deg,#4f7cff 0%,#8b5cf6 48%,#22d3ee 100%);
   --grad-soft:linear-gradient(100deg,rgba(79,124,255,.18),rgba(139,92,246,.14),rgba(34,211,238,.16));
+  --nav-bg:rgba(7,7,12,.7);
+  --ghost-bg:rgba(255,255,255,.05); --ghost-bg-hover:rgba(255,255,255,.1);
+  --glow-op:.4;
   --maxw:900px;
+}
+:root[data-theme="light"]{
+  --bg:#f5f5fa; --bg2:#ffffff; --card:#ffffff; --line:rgba(0,0,0,.08);
+  --txt:#1a1a24; --muted:#5b5b6d; --ink:#0a0a14;
+  --nav-bg:rgba(245,245,250,.85);
+  --ghost-bg:rgba(0,0,0,.04); --ghost-bg-hover:rgba(0,0,0,.08);
+  --glow-op:.2;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -39,14 +49,14 @@ a{color:inherit;text-decoration:none}
 .btn{display:inline-flex;align-items:center;gap:.5em;font-weight:600;font-size:.98rem;padding:14px 26px;border-radius:999px;cursor:pointer;border:0;transition:.25s transform,.25s box-shadow}
 .btn-primary{background:var(--grad);color:#fff;box-shadow:0 8px 30px rgba(79,124,255,.35)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(139,92,246,.5)}
-.btn-ghost{background:rgba(255,255,255,.05);color:var(--txt);border:1px solid var(--line)}
-.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-ghost{background:var(--ghost-bg);color:var(--txt);border:1px solid var(--line)}
+.btn-ghost:hover{background:var(--ghost-bg-hover)}
 .eyebrow{font-family:Inter;font-weight:600;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase}
 .glow{position:fixed;inset:0;z-index:-1;pointer-events:none}
-.glow:before{content:"";position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(120px);opacity:.4;background:radial-gradient(circle,rgba(79,124,255,.5),transparent 70%);top:-180px;left:-120px}
+.glow:before{content:"";position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(120px);opacity:var(--glow-op);background:radial-gradient(circle,rgba(79,124,255,.5),transparent 70%);top:-180px;left:-120px}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(7,7,12,.7);border-bottom:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:var(--nav-bg);border-bottom:1px solid var(--line)}
 nav .nav-wrap{max-width:1180px;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;height:72px}
 .logo{display:flex;align-items:center;gap:10px;font-family:Sora;font-weight:800;font-size:1.25rem}
 .logo img{height:38px;width:auto}
@@ -89,23 +99,30 @@ footer .grid{max-width:1180px;margin:0 auto;padding:0 22px;display:flex;justify-
 footer .grid .links{display:flex;gap:26px;flex-wrap:wrap;font-size:.94rem}
 footer .legal{max-width:1180px;margin:24px auto 0;padding:24px 22px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.82rem;opacity:.8}
 footer .legal .links{display:flex;gap:18px;font-size:.82rem}
-footer a:hover{color:#fff}
+footer a:hover{color:var(--ink)}
+.theme-toggle{background:var(--ghost-bg);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:50%;cursor:pointer;display:grid;place-items:center;font-size:1rem;transition:.2s background,.2s transform;font-family:inherit}
+.theme-toggle:hover{background:var(--ghost-bg-hover);transform:scale(1.08)}
+.logo .logo-light{display:none}
+[data-theme="light"] .logo .logo-dark{display:none}
+[data-theme="light"] .logo .logo-light{display:block}
 </style>
 
 <!-- JSON-LD FAQPage : double bloc -->
 <script type="application/ld+json" id="faq-schema"></script>
+<script src="theme.js"></script>
 </head>
 <body>
 <div class="glow"></div>
 
 <nav>
   <div class="nav-wrap">
-    <a href="index.html" class="logo" aria-label="AVA Créa - accueil"><img src="images/logo-ava-noir.png" alt="AVA Créa"></a>
+    <a href="index.html" class="logo" aria-label="AVA Créa - accueil"><img class="logo-dark" src="images/logo-ava-noir.png" alt="AVA Créa"><img class="logo-light" src="images/logo-ava-blanc.png" alt="AVA Créa"></a>
     <div class="links">
       <a href="index.html#offres">Offres</a>
       <a href="index.html#projets">Projets</a>
       <a href="index.html#process">Méthode</a>
       <a href="index.html#avis">Avis</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Changer de thème"><span data-theme-icon>☀️</span></button>
       <a href="index.html#contact" class="btn btn-primary" style="padding:10px 20px">Booster mes ventes</a>
     </div>
   </div>
@@ -148,7 +165,7 @@ footer a:hover{color:#fff}
 
 <footer>
   <div class="grid">
-    <a href="index.html" class="logo" aria-label="AVA Créa - accueil"><img src="images/logo-ava-noir.png" alt="AVA Créa"></a>
+    <a href="index.html" class="logo" aria-label="AVA Créa - accueil"><img class="logo-dark" src="images/logo-ava-noir.png" alt="AVA Créa"><img class="logo-light" src="images/logo-ava-blanc.png" alt="AVA Créa"></a>
     <div class="links">
       <a href="index.html#offres">Offres</a><a href="index.html#projets">Projets</a><a href="faq.html">FAQ</a><a href="index.html#contact">Contact</a>
     </div>
