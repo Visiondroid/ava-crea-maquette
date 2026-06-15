@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FAQ — AVA Créa</title>
+<meta name="description" content="Toutes les réponses à vos questions sur la création de contenu vidéo, le community management et la formation réseaux sociaux par AVA Créa." />
+<link rel="canonical" href="https://avacrea.fr/faq.html" />
+<link rel="icon" type="image/png" href="images/logo-ava-noir.png" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:site_name" content="AVA Créa" />
+<meta property="og:title" content="FAQ — AVA Créa" />
+<meta property="og:description" content="Toutes les réponses à vos questions sur l'accompagnement Création de Contenu et la Formation Réseaux Sociaux." />
+<meta property="og:url" content="https://avacrea.fr/faq.html" />
+<meta property="og:image" content="https://avacrea.fr/images/og-cover.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07070c; --bg2:#0d0d16; --card:#12121d; --line:rgba(255,255,255,.08);
+  --txt:#eef0f6; --muted:#a3a7b8;
+  --b:#4f7cff; --v:#8b5cf6; --c:#22d3ee;
+  --grad:linear-gradient(100deg,#4f7cff 0%,#8b5cf6 48%,#22d3ee 100%);
+  --grad-soft:linear-gradient(100deg,rgba(79,124,255,.18),rgba(139,92,246,.14),rgba(34,211,238,.16));
+  --maxw:900px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Sora,sans-serif;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.grad-txt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;align-items:center;gap:.5em;font-weight:600;font-size:.98rem;padding:14px 26px;border-radius:999px;cursor:pointer;border:0;transition:.25s transform,.25s box-shadow}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 8px 30px rgba(79,124,255,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(139,92,246,.5)}
+.btn-ghost{background:rgba(255,255,255,.05);color:var(--txt);border:1px solid var(--line)}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.eyebrow{font-family:Inter;font-weight:600;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase}
+.glow{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.glow:before{content:"";position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(120px);opacity:.4;background:radial-gradient(circle,rgba(79,124,255,.5),transparent 70%);top:-180px;left:-120px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(7,7,12,.7);border-bottom:1px solid var(--line)}
+nav .nav-wrap{max-width:1180px;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-family:Sora;font-weight:800;font-size:1.25rem}
+.logo img{height:38px;width:auto}
+nav .links{display:flex;align-items:center;gap:30px;font-size:.95rem;color:var(--muted)}
+nav .links a:hover{color:var(--txt)}
+@media(max-width:720px){nav .links{display:none}}
+
+/* HERO */
+.hero{text-align:center;padding:80px 0 30px}
+.hero h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;max-width:18ch;margin:0 auto 18px}
+.hero p{color:var(--muted);font-size:1.05rem;max-width:60ch;margin:0 auto 36px}
+.tabs{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px;gap:6px}
+.tab{padding:10px 22px;border-radius:999px;cursor:pointer;font-weight:600;font-size:.94rem;color:var(--muted);background:transparent;border:0;font-family:inherit;transition:.2s}
+.tab.active{background:var(--grad);color:#fff}
+.tab:not(.active):hover{color:var(--txt)}
+
+/* FAQ blocks */
+.faq-section{padding:30px 0 80px}
+.faq-block{display:none}
+.faq-block.active{display:block}
+.faq-block h2{font-size:clamp(1.4rem,2.6vw,2rem);font-weight:700;text-align:center;margin-bottom:8px}
+.faq-block .sub-head{color:var(--muted);text-align:center;margin-bottom:36px;font-size:.95rem}
+.faq-list{display:grid;gap:12px}
+.faq-list details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:0 22px;transition:.2s border-color}
+.faq-list details[open]{border-color:rgba(139,92,246,.4)}
+.faq-list summary{cursor:pointer;list-style:none;padding:20px 0;font-family:Sora;font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary:after{content:"+";font-size:1.5rem;color:var(--c);transition:.2s;line-height:1;flex-shrink:0}
+.faq-list details[open] summary:after{transform:rotate(45deg)}
+.faq-list .a{color:var(--muted);padding:0 0 22px;font-size:.97rem;white-space:pre-line;line-height:1.7}
+
+/* FINAL CTA */
+.final{position:relative;text-align:center;border:1px solid var(--line);border-radius:28px;padding:50px 24px;background:radial-gradient(circle at 50% 0%,rgba(139,92,246,.22),transparent 70%),var(--card);margin-top:50px}
+.final h3{font-size:clamp(1.4rem,3vw,2.1rem);max-width:20ch;margin:0 auto 14px;font-family:Sora;font-weight:700}
+.final p{color:var(--muted);max-width:54ch;margin:0 auto 22px}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:48px 0 30px;margin-top:60px;color:var(--muted)}
+footer .grid{max-width:1180px;margin:0 auto;padding:0 22px;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
+footer .grid .links{display:flex;gap:26px;flex-wrap:wrap;font-size:.94rem}
+footer .legal{max-width:1180px;margin:24px auto 0;padding:24px 22px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.82rem;opacity:.8}
+footer .legal .links{display:flex;gap:18px;font-size:.82rem}
+footer a:hover{color:#fff}
+</style>
+
+<!-- JSON-LD FAQPage : double bloc -->
+<script type="application/ld+json" id="faq-schema"></script>
+</head>
+<body>
+<div class="glow"></div>
+
+<nav>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo" aria-label="AVA Créa - accueil"><img src="images/logo-ava-noir.png" alt="AVA Créa"></a>
+    <div class="links">
+      <a href="index.html#offres">Offres</a>
+      <a href="index.html#projets">Projets</a>
+      <a href="index.html#process">Méthode</a>
+      <a href="index.html#avis">Avis</a>
+      <a href="index.html#contact" class="btn btn-primary" style="padding:10px 20px">Booster mes ventes</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow grad-txt">FAQ</span>
+    <h1 style="margin-top:14px">Toutes les <span class="grad-txt">réponses</span> à vos questions.</h1>
+    <p>Création de contenu, community management, formation : on a pris le temps de répondre en détail à ce que nos clients nous demandent le plus souvent.</p>
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-target="creation" role="tab">Accompagnement Création de Contenu</button>
+      <button class="tab" data-target="formation" role="tab">Formation Réseaux Sociaux</button>
+    </div>
+  </div>
+</header>
+
+<section class="faq-section">
+  <div class="wrap">
+
+    <div class="faq-block active" id="creation">
+      <h2>FAQ — Accompagnement Création de Contenu</h2>
+      <p class="sub-head">15 questions pour tout comprendre de notre accompagnement.</p>
+      <div class="faq-list" id="list-creation"></div>
+    </div>
+
+    <div class="faq-block" id="formation">
+      <h2>FAQ — Formation Réseaux Sociaux</h2>
+      <p class="sub-head">12 questions pour savoir si la formation est faite pour vous.</p>
+      <div class="faq-list" id="list-formation"></div>
+    </div>
+
+    <div class="final">
+      <h3>Une question qui n'est pas dans la liste ?</h3>
+      <p>Discutons-en directement. Le premier échange est gratuit et sans engagement.</p>
+      <a href="index.html#contact" class="btn btn-primary">Prendre rendez-vous →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="grid">
+    <a href="index.html" class="logo" aria-label="AVA Créa - accueil"><img src="images/logo-ava-noir.png" alt="AVA Créa"></a>
+    <div class="links">
+      <a href="index.html#offres">Offres</a><a href="index.html#projets">Projets</a><a href="faq.html">FAQ</a><a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+  <div class="legal">
+    <div>© 2026 AVA Créa — Création de contenu &amp; community management</div>
+    <div class="links">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// FAQ Création de Contenu : 9 home + 6 supplémentaires
+const faqCreation = [
+  ["Cette offre correspond-elle à mon entreprise ?","Chez AVA, nous accompagnons les PME, commerces, startups et entreprises ambitieuses qui souhaitent développer leur notoriété, attirer de nouveaux clients et accélérer leur croissance grâce aux réseaux sociaux.\n\nChaque entreprise est différente. C'est pourquoi nous construisons une stratégie sur mesure en fonction de votre marché, de vos objectifs et de vos ressources, que vous démarriez de zéro ou que vous disposiez déjà d'une communauté.\n\nNotre accompagnement est conçu pour les entreprises qui voient les réseaux sociaux comme un véritable levier de développement. Si vous recherchez une approche durable, basée sur la stratégie, la créativité et la performance, nous sommes faits pour travailler ensemble.\n\nEn revanche, si votre objectif est uniquement d'obtenir des résultats instantanés sans investissement ni vision à long terme, notre méthode ne sera probablement pas la plus adaptée."],
+  ["Est-ce que les réseaux sociaux peuvent réellement générer des résultats pour mon entreprise ?","Oui, à condition de s'appuyer sur une stratégie solide et de travailler avec régularité.\n\nChez AVA, nous ne cherchons pas à courir après les tendances du moment ou la viralité à tout prix. Nous créons des contenus vidéo stratégiques conçus pour répondre à des objectifs concrets : développer votre visibilité, renforcer votre image de marque, attirer des prospects qualifiés et contribuer à la croissance de votre activité.\n\nChaque entreprise ayant ses propres enjeux, nous définissons ensemble des objectifs clairs, analysons les performances et ajustons continuellement la stratégie pour maximiser les résultats.\n\nLes réseaux sociaux ne sont pas une solution miracle. En revanche, lorsqu'ils sont intégrés à une stratégie cohérente et orientée performance, ils deviennent un véritable moteur de croissance pour votre entreprise."],
+  ["Pourquoi choisir AVA plutôt qu'une autre agence ?","Parce que nous ne créons pas du contenu pour remplir un calendrier éditorial.\n\nChez AVA, chaque vidéo est pensée comme un outil de développement pour votre entreprise. Notre approche combine stratégie marketing, création de contenus engageants et accompagnement personnalisé afin de transformer les réseaux sociaux en véritable levier de croissance.\n\nCe qui nous différencie :\n• Une stratégie adaptée à vos objectifs et à votre marché\n• Des contenus conçus pour capter l'attention et générer de l'engagement\n• Une approche qui associe les codes du divertissement aux objectifs du marketing\n• Un suivi transparent et un accompagnement à chaque étape\n• Une vision long terme orientée résultats et développement\n\nNotre objectif n'est pas simplement de publier des vidéos, mais de vous aider à développer votre visibilité, renforcer votre image de marque et créer davantage d'opportunités commerciales."],
+  ["Comment se déroule votre accompagnement Création de Contenu ?","Chaque entreprise a des besoins différents. C'est pourquoi nous proposons un accompagnement entièrement personnalisé.\n\nNous pouvons intervenir à chaque étape de votre présence sur les réseaux sociaux, de la création de vos comptes jusqu'à la gestion complète de votre communication :\n• Définition de la stratégie de contenu\n• Création et optimisation de vos profils\n• Recherche d'idées et rédaction des scripts\n• Organisation et réalisation des tournages\n• Montage et optimisation des vidéos\n• Publication des contenus\n• Community management et gestion de votre communauté\n• Analyse des performances et ajustements stratégiques\n\nVous avez également la possibilité de choisir uniquement les services dont vous avez besoin. Que vous souhaitiez déléguer l'ensemble de votre communication ou simplement la création de vidéos, nous nous adaptons à vos objectifs, votre budget et votre organisation.\n\nNotre objectif est simple : vous faire gagner du temps tout en développant efficacement votre visibilité en ligne."],
+  ["Les contenus seront-ils adaptés à mon entreprise et à mon image de marque ?","Oui, avant toute création de contenu, nous prenons le temps de comprendre votre activité, votre marché, vos clients et les valeurs que vous souhaitez transmettre.\n\nCette phase nous permet de concevoir des contenus cohérents avec votre identité et adaptés aux attentes de votre audience. L'objectif est de mettre en avant ce qui vous distingue, tout en conservant une communication naturelle et professionnelle.\n\nChaque entreprise étant unique, les contenus que nous réalisons le sont également."],
+  ["Comment commencer à travailler ensemble ?","La première étape consiste à réserver un rendez-vous découverte avec notre équipe.\n\nCet échange nous permet de comprendre votre activité, vos objectifs, votre positionnement et les enjeux spécifiques de votre entreprise.\n\nÀ l'issue de cette discussion, nous vous présentons une proposition adaptée à vos besoins, accompagnée d'une stratégie claire et d'un plan d'action personnalisé.\n\nUne fois le projet validé, nous prenons en charge l'ensemble du processus : stratégie, création de contenus, production vidéo, publication et suivi des performances.\n\nNotre objectif est de construire une collaboration durable, fondée sur la confiance, la transparence et des résultats concrets."],
+  ["Combien coûtent vos prestations ?","Nous ne proposons pas de tarif unique, car chaque entreprise a des besoins, des objectifs et des contraintes différents.\n\nLe coût d'un accompagnement dépend notamment du volume de contenu à produire, de la fréquence des tournages, de la complexité des vidéos, des ressources nécessaires et des objectifs de développement de votre entreprise.\n\nNotre approche consiste à construire une solution adaptée à votre situation, plutôt que de vous proposer une formule standard qui ne correspondrait pas forcément à vos besoins.\n\nPour vous établir un devis précis, nous commençons toujours par un échange afin de comprendre votre activité, vos attentes et vos objectifs. À l'issue de cet entretien, nous vous proposons une recommandation claire ainsi qu'un accompagnement sur mesure.\n\nLe premier échange est gratuit et sans engagement."],
+  ["Comment savoir si je dois choisir la formation ou la création de contenu ?","Tout dépend de vos ressources, de votre temps disponible et de vos objectifs.\n\nLa formation est idéale si vous souhaitez développer vos compétences en interne et gérer vous-même vos réseaux sociaux sur le long terme.\n\nLa création de contenu est davantage adaptée aux entreprises qui souhaitent gagner du temps et bénéficier directement de l'expertise d'une équipe spécialisée.\n\nLors de notre premier échange, nous vous aidons à identifier la solution la plus pertinente pour votre situation."],
+  ["En quoi consiste votre formation ?","Notre formation vous apprend à gérer vos réseaux sociaux de manière autonome, de la stratégie à la création de contenu.\n\nVous apprendrez à trouver des idées de vidéos, créer des contenus performants, comprendre les mécanismes de visibilité, convertir votre audience en clients et mettre en place une stratégie adaptée à votre activité.\n\nContrairement à une formation classique, nous ne nous contentons pas de transmettre des connaissances. Nous vous accompagnons également dans la mise en place de votre stratégie, l'analyse de vos résultats et l'amélioration de vos contenus.\n\nL'objectif est de vous donner toutes les compétences nécessaires pour développer durablement votre présence en ligne et devenir une référence dans votre secteur."],
+  ["Combien de temps faut-il pour obtenir des résultats ?","Vous commencerez généralement à gagner en visibilité dès les premières semaines. En revanche, comme toute stratégie marketing, les résultats les plus significatifs s'observent généralement après 2 à 3 mois de publication régulière.\n\nNotre objectif est de construire une présence durable qui continue à attirer des clients sur le long terme."],
+  ["Quel est le délai de livraison des vidéos ?","Dès que nous avons défini ensemble la stratégie la plus adaptée à votre activité, nous lançons la production des contenus.\n\nLes premières vidéos sont généralement livrées sous 1 à 2 semaines, le temps nécessaire pour créer des contenus impactants, cohérents avec votre positionnement et pensés pour générer des résultats."],
+  ["Pourquoi investir dans du contenu organique plutôt que dans la publicité payante ?","La publicité payante peut être un excellent moyen d'obtenir rapidement de la visibilité. Cependant, ses résultats sont généralement liés au budget investi.\n\nLe contenu organique fonctionne différemment. Un contenu pertinent peut continuer à générer de la visibilité, de l'engagement et de la crédibilité longtemps après sa publication.\n\nNotre objectif est de créer des contenus capables d'attirer naturellement l'attention de votre audience et de renforcer durablement votre présence en ligne.\n\nNous considérons le contenu organique comme un véritable actif pour votre entreprise, capable de soutenir votre notoriété et votre développement sur le long terme."],
+  ["Qu'est-ce qui différencie vos vidéos des publicités traditionnelles ?","Les publicités traditionnelles cherchent souvent à vendre immédiatement en mettant en avant un produit ou un service.\n\nNotre approche est différente.\n\nNous créons des contenus conçus pour les usages actuels des réseaux sociaux : des vidéos dynamiques, engageantes et pensées pour capter l'attention dès les premières secondes.\n\nL'objectif n'est pas de produire une publicité qui ressemble à une publicité, mais un contenu que votre audience prend réellement plaisir à regarder.\n\nCette approche favorise naturellement l'engagement, la mémorisation et l'intérêt pour votre entreprise."],
+  ["Dois-je apparaître dans les vidéos ?","Pas nécessairement. Tout dépend de vos préférences et de votre niveau de confort.\n\nNous accompagnons aussi bien des dirigeants qui souhaitent être au cœur de leur communication que des entreprises qui préfèrent rester en retrait. Dans ce cas, nous mettons en place des formats adaptés : vidéos de présentation, prises de vue de vos locaux, de votre équipe, de vos réalisations, motion design, voix off ou tout autre contenu pertinent.\n\nNotre force est de nous adapter à chaque situation et de trouver la meilleure approche pour valoriser votre activité, avec ou sans votre présence à l'écran."],
+  ["Combien de temps dois-je consacrer au projet ?","Si vous n'apparaissez pas dans les vidéos, votre implication peut être très limitée.\n\nNous prenons généralement 1 à 2 heures au démarrage afin de comprendre votre activité, définir la stratégie et identifier vos objectifs. Une fois cette étape réalisée, nous pouvons gérer la production des contenus de manière autonome.\n\nPar la suite, votre intervention se limite principalement à nous informer d'éventuelles nouveautés : lancement d'une offre, promotion, événement, nouveau service ou toute information que vous souhaiteriez mettre en avant dans votre communication.\n\nNotre objectif est justement de vous faire gagner du temps en prenant en charge le maximum d'éléments opérationnels."],
+];
+
+// FAQ Formation : 2 home + 10 supplémentaires
+const faqFormation = [
+  ["Comment savoir si je dois choisir la formation ou la création de contenu ?","Tout dépend de vos ressources, de votre temps disponible et de vos objectifs.\n\nLa formation est idéale si vous souhaitez développer vos compétences en interne et gérer vous-même vos réseaux sociaux sur le long terme.\n\nLa création de contenu est davantage adaptée aux entreprises qui souhaitent gagner du temps et bénéficier directement de l'expertise d'une équipe spécialisée.\n\nLors de notre premier échange, nous vous aidons à identifier la solution la plus pertinente pour votre situation."],
+  ["En quoi consiste votre formation ?","Notre formation vous apprend à gérer vos réseaux sociaux de manière autonome, de la stratégie à la création de contenu.\n\nVous apprendrez à trouver des idées de vidéos, créer des contenus performants, comprendre les mécanismes de visibilité, convertir votre audience en clients et mettre en place une stratégie adaptée à votre activité.\n\nContrairement à une formation classique, nous ne nous contentons pas de transmettre des connaissances. Nous vous accompagnons également dans la mise en place de votre stratégie, l'analyse de vos résultats et l'amélioration de vos contenus.\n\nL'objectif est de vous donner toutes les compétences nécessaires pour développer durablement votre présence en ligne et devenir une référence dans votre secteur."],
+  ["À qui s'adresse la formation ?","Cette formation s'adresse aux entrepreneurs, indépendants, artisans, commerçants et petites entreprises qui souhaitent développer leur visibilité sur les réseaux sociaux tout en gardant le contrôle de leur communication.\n\nElle est particulièrement adaptée aux personnes qui disposent d'un budget limité ou qui préfèrent créer leurs contenus elles-mêmes afin de gagner en autonomie.\n\nL'objectif est de vous fournir une méthode simple et efficace pour communiquer régulièrement, développer votre audience et attirer de nouveaux clients."],
+  ["Comment se déroule la formation ?","La formation se déroule à distance sous forme de sessions individuelles en visioconférence.\n\nNous travaillons ensemble sur les fondamentaux des réseaux sociaux, la création de contenus performants, le montage vidéo, les mécanismes de viralité et les méthodes permettant de produire du contenu efficacement.\n\nL'objectif est de vous transmettre une méthode claire et applicable afin que vous puissiez développer votre visibilité et devenir autonome dans la création de contenu."],
+  ["Est-ce que la création de contenu va me prendre beaucoup de temps ?","Non.\n\nContrairement aux idées reçues, il n'est pas nécessaire de passer plusieurs heures par jour sur les réseaux sociaux pour obtenir des résultats.\n\nAu cours de la formation, vous apprendrez à organiser votre production de contenu, optimiser votre temps et mettre en place des méthodes simples pour créer plusieurs vidéos en une seule session de travail.\n\nL'objectif est de rendre la création de contenu efficace et compatible avec votre activité professionnelle."],
+  ["Est-ce que la formation peut m'aider à générer davantage de ventes ?","Oui, à condition d'appliquer les méthodes enseignées avec régularité.\n\nLa formation a pour objectif de vous aider à développer votre visibilité, attirer une audience qualifiée et renforcer votre crédibilité sur les réseaux sociaux.\n\nPour de nombreuses entreprises, cette visibilité se traduit ensuite par davantage de demandes de renseignements, de prospects et d'opportunités commerciales."],
+  ["En combien de temps puis-je obtenir des résultats ?","Les délais varient selon votre secteur d'activité, votre point de départ et votre implication.\n\nCertaines personnes constatent une progression de leur visibilité dès les premières semaines et commencent à générer leurs premières opportunités commerciales pendant la formation.\n\nNotre objectif est avant tout de vous transmettre une méthode durable qui continue de produire des résultats bien après la fin de l'accompagnement."],
+  ["Combien de temps dure la formation ?","La formation se déroule généralement sur une période de 2 à 3 mois, à raison d'une séance d'environ une heure par semaine en visioconférence.\n\nCe format permet d'avancer progressivement, de mettre en pratique les conseils entre chaque session et de bénéficier d'un véritable suivi personnalisé.\n\nEntre les séances, nous analysons ensemble vos contenus, corrigeons ce qui peut être amélioré et ajustons votre stratégie afin de vous aider à obtenir les meilleurs résultats possibles."],
+  ["Est-ce que je dois montrer mon visage ?","Non, ce n'est pas une obligation.\n\nNous adaptons les formats de contenu à votre activité, à votre personnalité et à vos préférences.\n\nSelon votre secteur, il est possible de mettre en avant vos produits, vos réalisations, vos équipes, vos locaux ou encore les coulisses de votre entreprise sans apparaître directement à l'écran.\n\nNotre objectif est de construire une stratégie avec laquelle vous êtes pleinement à l'aise."],
+  ["Dois-je déjà être à l'aise devant la caméra ?","Pas du tout.\n\nLa majorité des entrepreneurs que nous accompagnons n'ont jamais créé de contenu professionnel avant de travailler avec nous.\n\nNous vous guidons progressivement afin de vous aider à gagner en confiance et à trouver un style de communication naturel et adapté à votre personnalité.\n\nL'objectif n'est pas d'être acteur, mais de communiquer efficacement auprès de votre audience."],
+  ["Est-ce que je peux former mes salariés ?","Oui, tout à fait.\n\nLa formation peut être suivie par le dirigeant, un salarié ou plusieurs membres de votre équipe.\n\nNous adaptons l'accompagnement au niveau et aux objectifs des participants afin qu'ils puissent appliquer les méthodes enseignées directement dans leur environnement de travail.\n\nC'est une solution idéale pour les entreprises qui souhaitent développer leurs compétences en interne et gagner en autonomie dans la création de contenu."],
+  ["Comment démarrer ?","La première étape consiste à nous contacter afin d'échanger sur votre activité, vos objectifs et vos besoins.\n\nCet échange nous permet de vérifier que la formation correspond à votre situation et de construire un accompagnement adapté à votre niveau et à vos ambitions."],
+];
+
+function fill(listId, data){
+  const el = document.getElementById(listId);
+  data.forEach(([q,a])=>{
+    el.insertAdjacentHTML('beforeend', `<details><summary>${q}</summary><div class="a">${a}</div></details>`);
+  });
+}
+fill('list-creation', faqCreation);
+fill('list-formation', faqFormation);
+
+// Tabs
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.faq-block').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById(t.dataset.target).classList.add('active');
+  });
+});
+
+// JSON-LD FAQPage (union des 2 blocs, pour rich snippets)
+document.getElementById('faq-schema').textContent = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [...faqCreation, ...faqFormation].map(([q,a])=>({
+    "@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}
+  }))
+});
+</script>
+</body>
+</html>

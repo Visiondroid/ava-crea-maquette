@@ -5,6 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>AVA Créa — Vendez 2× plus grâce à des vidéos qui vous rendent visible</title>
 <meta name="description" content="Agence de création de contenu vidéo pour les réseaux sociaux. Des vidéos pensées pour générer des ventes, sans budget publicitaire." />
+<link rel="canonical" href="https://avacrea.fr/" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images/logo-ava-noir.png" />
+<link rel="apple-touch-icon" href="images/logo-ava-noir.png" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:site_name" content="AVA Créa" />
+<meta property="og:title" content="AVA Créa — Vendez 2× plus grâce à des vidéos qui vous rendent visible" />
+<meta property="og:description" content="Agence de création de contenu vidéo pour les réseaux sociaux. Des vidéos pensées pour générer des ventes, sans budget publicitaire." />
+<meta property="og:url" content="https://avacrea.fr/" />
+<meta property="og:image" content="https://avacrea.fr/images/og-cover.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AVA Créa — Vendez 2× plus grâce à des vidéos qui vous rendent visible" />
+<meta name="twitter:description" content="Agence de création de contenu vidéo pour les réseaux sociaux. Des vidéos pensées pour générer des ventes, sans budget publicitaire." />
+<meta name="twitter:image" content="https://avacrea.fr/images/og-cover.jpg" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -54,9 +77,10 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .hero h1{font-size:clamp(2.1rem,5.4vw,4rem);font-weight:800;max-width:14ch;margin:0 auto}
 .hero p.sub{color:var(--muted);font-size:clamp(1rem,1.5vw,1.18rem);max-width:60ch;margin:22px auto 32px}
 .hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.socials{display:flex;gap:16px;justify-content:center;margin-top:30px;color:var(--muted)}
-.socials span{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;font-size:1.1rem;transition:.2s}
-.socials span:hover{color:#fff;border-color:var(--v);transform:translateY(-2px)}
+.socials{display:flex;gap:14px;justify-content:center;margin-top:30px}
+.socials a{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;color:var(--muted);transition:.2s}
+.socials a:hover{color:#fff;border-color:var(--v);transform:translateY(-2px)}
+.socials svg{width:18px;height:18px;fill:currentColor}
 
 /* MARQUEE logos */
 .marquee{margin-top:52px;position:relative;overflow:hidden;
@@ -83,12 +107,13 @@ section{padding:74px 0}
 .stat .l{color:var(--muted);margin-top:6px;font-weight:500}
 @media(max-width:720px){.stats{grid-template-columns:1fr;gap:14px}}
 
-/* VIDEOS */
+/* VIDEOS / PROJETS */
 .vids{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .vid{position:relative;aspect-ratio:9/16;border-radius:18px;border:1px solid var(--line);overflow:hidden;background:linear-gradient(160deg,#171727,#0e0e18);display:grid;place-items:center}
-.vid:before{content:"";position:absolute;inset:0;background:var(--grad-soft);opacity:.5}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid:not(:has(iframe)):before{content:"";position:absolute;inset:0;background:var(--grad-soft);opacity:.5}
 .vid .play{position:relative;width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.3);display:grid;place-items:center;font-size:1.3rem;color:#fff}
-.vid .tag{position:absolute;bottom:12px;left:12px;right:12px;font-size:.8rem;color:var(--muted);background:rgba(0,0,0,.45);border-radius:8px;padding:6px 10px}
+.vid .tag{position:absolute;bottom:12px;left:12px;right:12px;font-size:.8rem;color:var(--muted);background:rgba(0,0,0,.45);border-radius:8px;padding:6px 10px;z-index:2}
 @media(max-width:880px){.vids{grid-template-columns:repeat(2,1fr)}}
 
 /* OFFRES */
@@ -152,16 +177,44 @@ section{padding:74px 0}
 footer{border-top:1px solid var(--line);padding:48px 0 30px;margin-top:74px;color:var(--muted)}
 footer .grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
 footer .logo img{height:34px}
-footer small{display:block;margin-top:18px;font-size:.82rem;opacity:.7}
-.note{position:fixed;bottom:14px;left:14px;z-index:99;background:#1a1426;border:1px solid var(--v);color:#d9c9ff;font-size:.74rem;padding:8px 12px;border-radius:10px;max-width:280px}
+footer .links{display:flex;gap:26px;flex-wrap:wrap;font-size:.94rem}
+footer .links a:hover{color:#fff}
+footer .legal{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:24px;padding-top:24px;border-top:1px solid var(--line);font-size:.82rem;opacity:.8}
+footer .legal .links{gap:18px;font-size:.82rem}
 </style>
+
+<!-- JSON-LD : ProfessionalService + Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "AVA Créa",
+  "url": "https://avacrea.fr/",
+  "logo": "https://avacrea.fr/images/logo-ava-noir.png",
+  "image": "https://avacrea.fr/images/og-cover.jpg",
+  "description": "Agence de création de contenu vidéo pour les réseaux sociaux. Des vidéos pensées pour générer des ventes, sans budget publicitaire.",
+  "priceRange": "€€",
+  "areaServed": "FR",
+  "serviceType": ["Création de contenu vidéo", "Community management", "Formation réseaux sociaux"],
+  "sameAs": [
+    "https://www.instagram.com/avacrea",
+    "https://www.tiktok.com/@avacrea",
+    "https://www.youtube.com/@avacrea",
+    "https://www.facebook.com/avacrea",
+    "https://www.linkedin.com/company/avacrea"
+  ]
+}
+</script>
+
+<!-- JSON-LD : FAQ -->
+<script type="application/ld+json" id="faq-schema"></script>
 </head>
 <body>
 <div class="glow"></div>
 
 <nav>
   <div class="wrap">
-    <a href="#" class="logo"><img src="images/logo-ava-noir.png" alt="AVA Créa"></a>
+    <a href="#" class="logo" aria-label="AVA Créa - accueil"><img src="images/logo-ava-noir.png" alt="AVA Créa"></a>
     <div class="nav-links">
       <a href="#offres">Offres</a>
       <a href="#projets">Projets</a>
@@ -170,7 +223,7 @@ footer small{display:block;margin-top:18px;font-size:.82rem;opacity:.7}
       <a href="#faq">FAQ</a>
       <a href="#contact" class="btn btn-primary" style="padding:10px 20px">Booster mes ventes</a>
     </div>
-    <button class="menu-btn">☰</button>
+    <button class="menu-btn" aria-label="Menu">☰</button>
   </div>
 </nav>
 
@@ -184,8 +237,22 @@ footer small{display:block;margin-top:18px;font-size:.82rem;opacity:.7}
       <a href="#contact" class="btn btn-primary">Booster mes ventes →</a>
       <a href="#projets" class="btn btn-ghost">Voir nos projets réalisés</a>
     </div>
-    <div class="socials">
-      <span>📸</span><span>🎵</span><span>▶️</span><span>📘</span><span>in</span>
+    <div class="socials" aria-label="Réseaux sociaux">
+      <a href="https://www.instagram.com/avacrea" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.2-.1 1.6-.1 4.8-.1zM12 0C8.7 0 8.3 0 7.1.1 5.8.1 5 .3 4.2.6c-.8.3-1.5.7-2.2 1.4C1.3 2.7.9 3.4.6 4.2.3 5 .1 5.8.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.1 1.3.3 2.1.6 2.9.3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.8.3 1.6.5 2.9.6C8.3 24 8.7 24 12 24s3.7 0 4.9-.1c1.3-.1 2.1-.3 2.9-.6.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.8.5-1.6.6-2.9.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.1-1.3-.3-2.1-.6-2.9-.3-.8-.7-1.5-1.4-2.2-.7-.7-1.4-1.1-2.2-1.4-.8-.3-1.6-.5-2.9-.6C15.7 0 15.3 0 12 0zm0 5.8c-3.4 0-6.2 2.8-6.2 6.2s2.8 6.2 6.2 6.2 6.2-2.8 6.2-6.2-2.8-6.2-6.2-6.2zm0 10.2c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm6.4-11.8c-.8 0-1.4.6-1.4 1.4 0 .8.6 1.4 1.4 1.4.8 0 1.4-.6 1.4-1.4 0-.8-.6-1.4-1.4-1.4z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@avacrea" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <svg viewBox="0 0 24 24"><path d="M19.6 5.6c-1.5 0-2.7-1.2-2.7-2.7V2.4h-3.4v13.4c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5c.3 0 .5 0 .8.1v-3.5c-.3 0-.5-.1-.8-.1-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6V8.7c1.2.9 2.7 1.4 4.3 1.4V6.7c-.9 0-1.7-.3-2.3-.8-.5-.4-.9-.9-1.2-1.5h1.8V2.4h-1.8c.2 1.4 1 2.6 2.1 3.2z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@avacrea" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <svg viewBox="0 0 24 24"><path d="M23.5 6.2c-.3-1-1.1-1.8-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5C1.6 4.4.8 5.2.5 6.2 0 8.1 0 12 0 12s0 3.9.5 5.8c.3 1 1.1 1.8 2.1 2.1 1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5c1-.3 1.8-1.1 2.1-2.1.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/avacrea" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.4 11 10.1 11.9V15.5h-3v-3.5h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.3l-.5 3.5h-2.8v8.4C19.6 23 24 18 24 12z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/company/avacrea" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.8-3-1.9 0-2.1 1.4-2.1 2.9v5.7H9.5V8.6h3.4v1.6h.1c.5-.9 1.6-1.8 3.3-1.8 3.5 0 4.2 2.3 4.2 5.4v6.6zM5.5 7c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm1.8 13.4H3.7V8.6h3.6v11.8zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6C0 23.2.8 24 1.8 24h20.4c1 0 1.8-.8 1.8-1.7V1.7c0-.9-.8-1.7-1.8-1.7z"/></svg>
+      </a>
     </div>
   </div>
   <div class="marquee">
@@ -206,20 +273,26 @@ footer small{display:block;margin-top:18px;font-size:.82rem;opacity:.7}
   </div>
 </section>
 
-<!-- VIDEOS -->
-<section style="background:var(--bg2)">
+<!-- PROJETS / VIDEOS -->
+<section id="projets" style="background:var(--bg2)">
   <div class="wrap">
     <div class="sec-head reveal">
+      <span class="eyebrow grad-txt">Nos projets</span>
       <h2>Des vidéos qui boostent vos ventes <span class="grad-txt">sans dépenser 1€ en pub</span></h2>
       <p>Quel que soit votre secteur d'activité, notre agence développe votre présence sur les réseaux sociaux avec des contenus qui génèrent des résultats concrets.</p>
     </div>
-    <div class="vids">
-      <div class="vid reveal"><div class="play">▶</div><div class="tag">Black &amp; White Burger</div></div>
-      <div class="vid reveal"><div class="play">▶</div><div class="tag">Ti Galik</div></div>
-      <div class="vid reveal"><div class="play">▶</div><div class="tag">Tell &amp; Cash</div></div>
-      <div class="vid reveal"><div class="play">▶</div><div class="tag">Anas Boussaida</div></div>
+    <div class="vids" id="vids">
+      <!-- Rempli par le JS — placeholders tant qu'AVA n'a pas fourni les URLs des 4 vidéos vitrines -->
     </div>
-    <div style="text-align:center;margin-top:34px" class="reveal"><a href="#projets" class="btn btn-ghost">Voir nos projets →</a></div>
+  </div>
+</section>
+
+<!-- PREUVE / RENFORT CA -->
+<section style="padding:50px 0">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;border:1px solid var(--line);border-radius:24px;padding:48px 32px;background:radial-gradient(circle at 50% 0%,rgba(34,211,238,.12),transparent 70%),var(--card);max-width:920px;margin:0 auto">
+      <h3 style="font-family:Sora,sans-serif;font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:700;line-height:1.25;letter-spacing:-.02em">Nos stratégies ont déjà démontré leur efficacité, et nos vidéos ont contribué à générer <span class="grad-txt">des milliers d'euros de chiffre d'affaires</span> pour nos clients.</h3>
+    </div>
   </div>
 </section>
 
@@ -315,7 +388,7 @@ footer small{display:block;margin-top:18px;font-size:.82rem;opacity:.7}
       <h2>Besoin d'un renseignement ?</h2>
       <p>Nous prenons le temps de répondre à vos questions pour vous orienter vers la solution la plus adaptée.</p></div>
     <div class="faq" id="faq-list"></div>
-    <div class="faq-more reveal"><a href="#" class="btn btn-ghost">Voir toutes les questions →</a></div>
+    <div class="faq-more reveal"><a href="faq.html" class="btn btn-ghost">Voir toutes les questions →</a></div>
   </div>
 </section>
 
@@ -325,19 +398,25 @@ footer small{display:block;margin-top:18px;font-size:.82rem;opacity:.7}
     <div class="final reveal">
       <h2>Donnons à votre entreprise la <span class="grad-txt">visibilité qu'elle mérite.</span></h2>
       <p>Discutons de votre projet et construisons ensemble une stratégie adaptée à votre entreprise, votre marché et vos ambitions.</p>
-      <a href="#" class="btn btn-primary">Prendre rendez-vous →</a>
+      <a href="https://calendly.com/avacrea/decouverte" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Prendre rendez-vous →</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap grid">
-    <a href="#" class="logo"><img src="images/logo-ava-noir.png" alt="AVA Créa"></a>
-    <div style="display:flex;gap:26px;flex-wrap:wrap">
+    <a href="#" class="logo" aria-label="AVA Créa - haut de page"><img src="images/logo-ava-noir.png" alt="AVA Créa"></a>
+    <div class="links">
       <a href="#offres">Offres</a><a href="#projets">Projets</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
     </div>
   </div>
-  <div class="wrap"><small>© 2026 AVA Créa — Création de contenu &amp; community management · Expert en croissance sur les réseaux sociaux</small></div>
+  <div class="wrap legal">
+    <div>© 2026 AVA Créa — Création de contenu &amp; community management</div>
+    <div class="links">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+    </div>
+  </div>
 </footer>
 
 
@@ -347,7 +426,23 @@ const clients=[["japanim","client-japanim.png"],["O Bloc","client-obloc.jpg"],["
 const lt=document.getElementById('logos');
 [...clients,...clients].forEach(([n,f])=>{lt.insertAdjacentHTML('beforeend',`<div class="chip"><img src="images/clients/${f}" alt="${n}" loading="lazy"></div>`);});
 
-// avis (placeholders à remplacer par les vrais)
+// vidéos — quand AVA fournira les embedUrl TikTok/Insta, remplir le champ embed.
+// Tant qu'il est vide, on affiche le placeholder visuel existant.
+const videos=[
+ {tag:"Black & White Burger", embed:""},
+ {tag:"Ti Galik",              embed:""},
+ {tag:"Tell & Cash",            embed:""},
+ {tag:"Anas Boussaida",         embed:""},
+];
+const vt=document.getElementById('vids');
+videos.forEach(v=>{
+  const inner = v.embed
+    ? `<iframe src="${v.embed}" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`
+    : `<div class="play">▶</div>`;
+  vt.insertAdjacentHTML('beforeend',`<div class="vid reveal">${inner}<div class="tag">${v.tag}</div></div>`);
+});
+
+// avis (placeholders à remplacer par les vrais une fois AVA aura fourni les verbatims)
 const avis=[
  ["★★★★★","Depuis qu'AVA gère nos réseaux, on a doublé les réservations en 2 mois. Des vidéos qui donnent vraiment envie.","Black & White Burger","Restauration"],
  ["★★★★★","Enfin une agence qui pense ventes et pas juste \"likes\". Résultats concrets dès les premières semaines.","Ti Galik","Commerce"],
@@ -358,20 +453,27 @@ const avis=[
 const at=document.getElementById('avis-track');
 [...avis,...avis].forEach(([s,t,n,r])=>{at.insertAdjacentHTML('beforeend',`<div class="avis"><div class="stars">${s}</div><p>"${t}"</p><div class="who"><div class="av">${n[0]}</div><div><b>${n}</b><small>${r}</small></div></div></div>`);});
 
-// FAQ (9 questions homepage)
+// FAQ (9 questions homepage - réponses validées Ava, Drive)
 const faq=[
- ["Cette offre correspond-elle à mon entreprise ?","Chez AVA, nous accompagnons les PME, commerces, startups et entreprises ambitieuses qui veulent développer leur notoriété et accélérer leur croissance grâce aux réseaux sociaux. Chaque stratégie est construite sur mesure selon votre marché, vos objectifs et vos ressources."],
- ["Les réseaux sociaux peuvent-ils vraiment générer des résultats ?","Oui, à condition de s'appuyer sur une stratégie solide et de travailler avec régularité. Nous créons des contenus vidéo pensés pour des objectifs concrets : visibilité, image de marque, prospects qualifiés et croissance."],
- ["Pourquoi choisir AVA plutôt qu'une autre agence ?","Parce que chaque vidéo est pensée comme un outil de développement, pas pour remplir un calendrier. Stratégie marketing + contenus engageants + accompagnement personnalisé, avec une vision long terme orientée résultats."],
- ["Comment se déroule votre accompagnement création de contenu ?","Un accompagnement entièrement personnalisé : stratégie, création/optimisation des profils, scripts, tournages, montage, publication, community management, analyse. Vous pouvez aussi choisir uniquement les services dont vous avez besoin."],
- ["Les contenus seront-ils adaptés à mon image de marque ?","Oui. Avant toute création, nous prenons le temps de comprendre votre activité, votre marché et vos valeurs pour concevoir des contenus cohérents avec votre identité et adaptés à votre audience."],
- ["Comment commencer à travailler ensemble ?","La première étape est un rendez-vous découverte. À l'issue de cet échange, nous vous présentons une proposition adaptée avec une stratégie claire et un plan d'action personnalisé."],
- ["Combien coûtent vos prestations ?","Pas de tarif unique : le coût dépend du volume de contenu, de la fréquence des tournages et de vos objectifs. Nous construisons une solution sur mesure. Le premier échange est gratuit et sans engagement."],
- ["Formation ou création de contenu : comment choisir ?","La formation est idéale pour gérer vous-même vos réseaux sur le long terme. La création de contenu convient aux entreprises qui veulent gagner du temps et déléguer à une équipe spécialisée. On vous aide à choisir lors du premier échange."],
- ["En quoi consiste votre formation ?","Elle vous apprend à gérer vos réseaux en autonomie : trouver des idées, créer des contenus performants, comprendre la visibilité, convertir votre audience en clients et mettre en place une stratégie durable — avec accompagnement et analyse de vos résultats."],
+ ["Cette offre correspond-elle à mon entreprise ?","Chez AVA, nous accompagnons les PME, commerces, startups et entreprises ambitieuses qui souhaitent développer leur notoriété, attirer de nouveaux clients et accélérer leur croissance grâce aux réseaux sociaux.\n\nChaque entreprise est différente. C'est pourquoi nous construisons une stratégie sur mesure en fonction de votre marché, de vos objectifs et de vos ressources, que vous démarriez de zéro ou que vous disposiez déjà d'une communauté.\n\nNotre accompagnement est conçu pour les entreprises qui voient les réseaux sociaux comme un véritable levier de développement. Si vous recherchez une approche durable, basée sur la stratégie, la créativité et la performance, nous sommes faits pour travailler ensemble.\n\nEn revanche, si votre objectif est uniquement d'obtenir des résultats instantanés sans investissement ni vision à long terme, notre méthode ne sera probablement pas la plus adaptée."],
+ ["Est-ce que les réseaux sociaux peuvent réellement générer des résultats pour mon entreprise ?","Oui, à condition de s'appuyer sur une stratégie solide et de travailler avec régularité.\n\nChez AVA, nous ne cherchons pas à courir après les tendances du moment ou la viralité à tout prix. Nous créons des contenus vidéo stratégiques conçus pour répondre à des objectifs concrets : développer votre visibilité, renforcer votre image de marque, attirer des prospects qualifiés et contribuer à la croissance de votre activité.\n\nChaque entreprise ayant ses propres enjeux, nous définissons ensemble des objectifs clairs, analysons les performances et ajustons continuellement la stratégie pour maximiser les résultats.\n\nLes réseaux sociaux ne sont pas une solution miracle. En revanche, lorsqu'ils sont intégrés à une stratégie cohérente et orientée performance, ils deviennent un véritable moteur de croissance pour votre entreprise."],
+ ["Pourquoi choisir AVA plutôt qu'une autre agence ?","Parce que nous ne créons pas du contenu pour remplir un calendrier éditorial.\n\nChez AVA, chaque vidéo est pensée comme un outil de développement pour votre entreprise. Notre approche combine stratégie marketing, création de contenus engageants et accompagnement personnalisé afin de transformer les réseaux sociaux en véritable levier de croissance.\n\nCe qui nous différencie :\n• Une stratégie adaptée à vos objectifs et à votre marché\n• Des contenus conçus pour capter l'attention et générer de l'engagement\n• Une approche qui associe les codes du divertissement aux objectifs du marketing\n• Un suivi transparent et un accompagnement à chaque étape\n• Une vision long terme orientée résultats et développement\n\nNotre objectif n'est pas simplement de publier des vidéos, mais de vous aider à développer votre visibilité, renforcer votre image de marque et créer davantage d'opportunités commerciales."],
+ ["Comment se déroule votre accompagnement Création de Contenu ?","Chaque entreprise a des besoins différents. C'est pourquoi nous proposons un accompagnement entièrement personnalisé.\n\nNous pouvons intervenir à chaque étape de votre présence sur les réseaux sociaux, de la création de vos comptes jusqu'à la gestion complète de votre communication :\n• Définition de la stratégie de contenu\n• Création et optimisation de vos profils\n• Recherche d'idées et rédaction des scripts\n• Organisation et réalisation des tournages\n• Montage et optimisation des vidéos\n• Publication des contenus\n• Community management et gestion de votre communauté\n• Analyse des performances et ajustements stratégiques\n\nVous avez également la possibilité de choisir uniquement les services dont vous avez besoin. Que vous souhaitiez déléguer l'ensemble de votre communication ou simplement la création de vidéos, nous nous adaptons à vos objectifs, votre budget et votre organisation.\n\nNotre objectif est simple : vous faire gagner du temps tout en développant efficacement votre visibilité en ligne."],
+ ["Les contenus seront-ils adaptés à mon entreprise et à mon image de marque ?","Oui, avant toute création de contenu, nous prenons le temps de comprendre votre activité, votre marché, vos clients et les valeurs que vous souhaitez transmettre.\n\nCette phase nous permet de concevoir des contenus cohérents avec votre identité et adaptés aux attentes de votre audience. L'objectif est de mettre en avant ce qui vous distingue, tout en conservant une communication naturelle et professionnelle.\n\nChaque entreprise étant unique, les contenus que nous réalisons le sont également."],
+ ["Comment commencer à travailler ensemble ?","La première étape consiste à réserver un rendez-vous découverte avec notre équipe.\n\nCet échange nous permet de comprendre votre activité, vos objectifs, votre positionnement et les enjeux spécifiques de votre entreprise.\n\nÀ l'issue de cette discussion, nous vous présentons une proposition adaptée à vos besoins, accompagnée d'une stratégie claire et d'un plan d'action personnalisé.\n\nUne fois le projet validé, nous prenons en charge l'ensemble du processus : stratégie, création de contenus, production vidéo, publication et suivi des performances.\n\nNotre objectif est de construire une collaboration durable, fondée sur la confiance, la transparence et des résultats concrets."],
+ ["Combien coûtent vos prestations ?","Nous ne proposons pas de tarif unique, car chaque entreprise a des besoins, des objectifs et des contraintes différents.\n\nLe coût d'un accompagnement dépend notamment du volume de contenu à produire, de la fréquence des tournages, de la complexité des vidéos, des ressources nécessaires et des objectifs de développement de votre entreprise.\n\nNotre approche consiste à construire une solution adaptée à votre situation, plutôt que de vous proposer une formule standard qui ne correspondrait pas forcément à vos besoins.\n\nPour vous établir un devis précis, nous commençons toujours par un échange afin de comprendre votre activité, vos attentes et vos objectifs. À l'issue de cet entretien, nous vous proposons une recommandation claire ainsi qu'un accompagnement sur mesure.\n\nLe premier échange est gratuit et sans engagement."],
+ ["Comment savoir si je dois choisir la formation ou la création de contenu ?","Tout dépend de vos ressources, de votre temps disponible et de vos objectifs.\n\nLa formation est idéale si vous souhaitez développer vos compétences en interne et gérer vous-même vos réseaux sociaux sur le long terme.\n\nLa création de contenu est davantage adaptée aux entreprises qui souhaitent gagner du temps et bénéficier directement de l'expertise d'une équipe spécialisée.\n\nLors de notre premier échange, nous vous aidons à identifier la solution la plus pertinente pour votre situation."],
+ ["En quoi consiste votre formation ?","Notre formation vous apprend à gérer vos réseaux sociaux de manière autonome, de la stratégie à la création de contenu.\n\nVous apprendrez à trouver des idées de vidéos, créer des contenus performants, comprendre les mécanismes de visibilité, convertir votre audience en clients et mettre en place une stratégie adaptée à votre activité.\n\nContrairement à une formation classique, nous ne nous contentons pas de transmettre des connaissances. Nous vous accompagnons également dans la mise en place de votre stratégie, l'analyse de vos résultats et l'amélioration de vos contenus.\n\nL'objectif est de vous donner toutes les compétences nécessaires pour développer durablement votre présence en ligne et devenir une référence dans votre secteur."],
 ];
 const fl=document.getElementById('faq-list');
 faq.forEach(([q,a])=>{fl.insertAdjacentHTML('beforeend',`<details><summary>${q}</summary><div class="a">${a}</div></details>`);});
+
+// JSON-LD FAQPage (rich snippets)
+document.getElementById('faq-schema').textContent = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faq.map(([q,a])=>({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}}))
+});
 
 // reveal au scroll (ou tout afficher en mode ?static pour capture)
 if(location.search.includes('static')){
