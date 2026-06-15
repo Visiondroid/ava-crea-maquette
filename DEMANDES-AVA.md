@@ -97,7 +97,13 @@ Référencée comme `images/og-cover.jpg` mais le fichier n'existe pas. 1200×63
 
 - [ ] OK pour que Vision génère la cover OG ? (sinon Ava la fournit)
 
-### 10. Blog — décision
+### 10. Cas client Anas Boussaida (page Projets)
+
+Le doc Drive « Anas boussaida » est **vide** (créé le 07/06 mais pas rempli). Les 3 autres cas (BWBurger, Tell & Cash, Ti'Galik) sont intégrés en storytelling complet sur `projets.html`. Pour Anas, j'ai mis un placeholder « Étude de cas en préparation ».
+
+- [ ] Ava rédige le storytelling Anas Boussaida (même format que les autres : contexte → stratégie → résultats). Les 3 screenshots (avant / 1ʳᵉ vidéo virale / après) sont déjà dans le Drive.
+
+### 11. Blog — décision
 
 Dans le doc Drive "Blog", Ava demande : *« Si tu penses que rajouter des blogs peut aider mon référencement je peux en créer une fois de temps en temps. »*
 
