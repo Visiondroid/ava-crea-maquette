@@ -424,10 +424,10 @@ const lt=document.getElementById('logos');
 // vidéos — quand AVA fournira les embedUrl TikTok/Insta, remplir le champ embed.
 // Tant qu'il est vide, on affiche le placeholder visuel existant.
 const videos=[
- {tag:"Black & White Burger", src:"videos/bwburger.mp4"},
- {tag:"Ti Galik",              src:"videos/tigalik.mp4"},
- {tag:"Tell & Cash",            src:"videos/tellandcash.mp4"},
- {tag:"Anas Boussaida",         embed:""},
+ {src:"videos/tellandcash.mp4"},
+ {src:"videos/tigalik.mp4"},
+ {src:"videos/bwburger.mp4"},
+ {src:"videos/video04.mp4"},
 ];
 const vt=document.getElementById('vids');
 videos.forEach(v=>{
@@ -436,7 +436,7 @@ videos.forEach(v=>{
     : v.embed
     ? `<iframe src="${v.embed}" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`
     : `<div class="play">▶</div>`;
-  vt.insertAdjacentHTML('beforeend',`<div class="vid reveal">${inner}<div class="tag">${v.tag}</div></div>`);
+  vt.insertAdjacentHTML('beforeend',`<div class="vid reveal">${inner}</div>`);
 });
 
 // avis (placeholders à remplacer par les vrais une fois AVA aura fourni les verbatims)
