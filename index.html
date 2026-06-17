@@ -96,10 +96,6 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .hero h1{font-size:clamp(2.1rem,5.4vw,4rem);font-weight:800;max-width:14ch;margin:0 auto}
 .hero p.sub{color:var(--muted);font-size:clamp(1rem,1.5vw,1.18rem);max-width:60ch;margin:22px auto 32px}
 .hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.socials{display:flex;gap:14px;justify-content:center;margin-top:30px}
-.socials a{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;color:var(--muted);transition:.2s}
-.socials a:hover{color:var(--ink);border-color:var(--v);transform:translateY(-2px)}
-.socials svg{width:18px;height:18px;fill:currentColor}
 
 /* MARQUEE logos */
 .marquee{margin-top:52px;position:relative;overflow:hidden;
@@ -129,8 +125,9 @@ section{padding:74px 0}
 /* VIDEOS / PROJETS */
 .vids{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .vid{position:relative;aspect-ratio:9/16;border-radius:18px;border:1px solid var(--line);overflow:hidden;background:linear-gradient(160deg,#171727,#0e0e18);display:grid;place-items:center}
-.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.vid:not(:has(iframe)):before{content:"";position:absolute;inset:0;background:var(--grad-soft);opacity:var(--glow-op)}
+.vid iframe,.vid video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid video{object-fit:cover;background:#000}
+.vid:not(:has(iframe)):not(:has(video)):before{content:"";position:absolute;inset:0;background:var(--grad-soft);opacity:var(--glow-op)}
 .vid .play{position:relative;width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.3);display:grid;place-items:center;font-size:1.3rem;color:#fff}
 .vid .tag{position:absolute;bottom:12px;left:12px;right:12px;font-size:.8rem;color:var(--muted);background:var(--vid-tag-bg);border-radius:8px;padding:6px 10px;z-index:2}
 @media(max-width:880px){.vids{grid-template-columns:repeat(2,1fr)}}
@@ -214,14 +211,7 @@ footer .legal .links{gap:18px;font-size:.82rem}
   "description": "Agence de création de contenu vidéo pour les réseaux sociaux. Des vidéos pensées pour générer des ventes, sans budget publicitaire.",
   "priceRange": "€€",
   "areaServed": "FR",
-  "serviceType": ["Création de contenu vidéo", "Community management", "Formation réseaux sociaux"],
-  "sameAs": [
-    "https://www.instagram.com/avacrea",
-    "https://www.tiktok.com/@avacrea",
-    "https://www.youtube.com/@avacrea",
-    "https://www.facebook.com/avacrea",
-    "https://www.linkedin.com/company/avacrea"
-  ]
+  "serviceType": ["Création de contenu vidéo", "Community management", "Formation réseaux sociaux"]
 }
 </script>
 
@@ -434,14 +424,16 @@ const lt=document.getElementById('logos');
 // vidéos — quand AVA fournira les embedUrl TikTok/Insta, remplir le champ embed.
 // Tant qu'il est vide, on affiche le placeholder visuel existant.
 const videos=[
- {tag:"Black & White Burger", embed:""},
- {tag:"Ti Galik",              embed:""},
- {tag:"Tell & Cash",            embed:""},
+ {tag:"Black & White Burger", src:"videos/bwburger.mp4"},
+ {tag:"Ti Galik",              src:"videos/tigalik.mp4"},
+ {tag:"Tell & Cash",            src:"videos/tellandcash.mp4"},
  {tag:"Anas Boussaida",         embed:""},
 ];
 const vt=document.getElementById('vids');
 videos.forEach(v=>{
-  const inner = v.embed
+  const inner = v.src
+    ? `<video src="${v.src}" poster="${v.src.replace('videos/','videos/poster-').replace('.mp4','.jpg')}" muted loop playsinline preload="none" controls></video>`
+    : v.embed
     ? `<iframe src="${v.embed}" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`
     : `<div class="play">▶</div>`;
   vt.insertAdjacentHTML('beforeend',`<div class="vid reveal">${inner}<div class="tag">${v.tag}</div></div>`);
