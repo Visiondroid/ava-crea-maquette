@@ -1,8 +1,25 @@
 # Demandes à Ava — finaliser le site pour la mise en ligne
 
-**Date :** 15/06/2026 · **Statut :** site code-ready, attente data Ava pour go-live
+**Date :** 19/06/2026 · **Statut :** retour Nour « Modification site web » (19/06) intégré — commit local prêt, reste `git push` (geste Chris)
 
-## Ce qui est fait (Vision, 15/06)
+## ✅ 19/06/2026 — Retour Nour traité (Vision)
+
+Mail Nour 19/06 → 7 points, tous intégrés dans la maquette :
+
+1. ✅ **Logos en version claire** — les chips clients viraient au **NOIR** en mode clair (`--chip-bg` inversé). Passés en **blanc + bordure subtile** dans les 2 modes → logos nets. *(NB : logo Laiterie Gilbert blanc → invisible sur blanc, déjà le cas en sombre ; à remplacer par une version foncée ou retirer.)*
+2. ✅ **Son au clic sur les vidéos** — `muted` retiré + handler : clic = lecture AVEC son + coupe les autres.
+3. ✅ **2 vidéos remplacées** — billets (video04) → **Vidéo tell and cash** · burger (bwburger) → **Vidéo anas** (rapatriées du Drive + posters générés ; anciennes supprimées). *(NB : il reste 2 vidéos Tell & Cash — la « dame en rose » gardée + la nouvelle ; si Nour voulait remplacer la dame en rose à la place → 10 sec.)*
+4. ✅ **Cas Anas Boussaida** — `projet-anas.html` rédigé en entier (texte Drive de Nour : 1 000 → 11 000 abonnés, 1ʳᵉ vidéo 1M+) + 3 captures (avant/viral/après) + carte réelle sur `projets.html`.
+5. ⏳ **Mentions légales** — données publiques Pappers intégrées (EI · SIRET 898 058 128 00023 · APE 78.10Z · TVA FR75 898 058 128 · Angers) + hébergeur GitHub Pages. **MANQUE (masqué par l'INSEE → demander à Nour) : nom complet (Prénom NOM) + adresse précise du siège** ; + confirmer le régime TVA (franchise en base ?).
+6. ✅ **Mode sombre par défaut** — `theme.js` ouvre en sombre (toggle clair conservé).
+7. ✅ **Version mobile** — maquette déjà responsive MAIS le menu burger ne s'ouvrait pas → **câblé** (theme.js + CSS). Mobile pleinement fonctionnel. → Réponse à Nour : « c'est déjà dispo, le site s'adapte au mobile ».
+8. ✅ **Responsive grand écran / dézoom** (retour Chris 19/06) — les sections en animation `reveal` restaient **blanches** au dézoom (on voit plusieurs sections d'un coup, `opacity:0` non déclenché). → **reveal robuste** dans `theme.js` : révèle tout ce qui entre dans le viewport (chargement + scroll + **resize/zoom**). Vérifié en preview à 2560px = page pleine, zéro section blanche.
+
+**Reste pour Chris :** (a) répondre à Nour (nom + adresse mentions légales ; confirmer mapping vidéos si besoin) · (b) `git -C ~/InfinityVision/05_sites/ava-crea push` pour déployer.
+
+---
+
+### Référence — état au 15/06/2026
 
 - ✅ Section `#projets` créée (les CTA "Voir nos projets" pointent enfin quelque part)
 - ✅ Liens morts réparés (CTA "Prendre rendez-vous", footer, FAQ-more vers `faq.html`)

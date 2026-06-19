@@ -6,8 +6,8 @@
   function getInitial(){
     const saved = localStorage.getItem(STORAGE_KEY);
     if(saved === 'light' || saved === 'dark') return saved;
-    // sinon : préférence système
-    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    // défaut : mode sombre (demande Ava 19/06) — le toggle clair reste disponible
+    return 'dark';
   }
 
   function apply(theme){
@@ -34,6 +34,30 @@
         apply(next);
       });
     });
+    // menu mobile (burger) — ouvre / ferme la navigation
+    const links = document.querySelector('.nav-links');
+    document.querySelectorAll('.menu-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{ if(links) links.classList.toggle('open'); });
+    });
+    if(links){
+      links.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>links.classList.remove('open')));
+    }
+    // reveal au scroll robuste — révèle tout ce qui est dans le viewport (au chargement,
+    // au scroll ET au resize/zoom) → plus de sections blanches quand on dézoome.
+    const reveals = document.querySelectorAll('.reveal');
+    if(reveals.length){
+      const revealVisible = ()=>{
+        const limit = window.innerHeight + 120; // tout ce qui est en vue (+ un cran sous le pli)
+        reveals.forEach(el=>{
+          if(!el.classList.contains('in') && el.getBoundingClientRect().top < limit){
+            el.classList.add('in');
+          }
+        });
+      };
+      window.addEventListener('scroll', revealVisible, {passive:true});
+      window.addEventListener('resize', revealVisible);
+      revealVisible();
+    }
   }
 
   if(document.readyState === 'loading'){

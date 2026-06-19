@@ -50,7 +50,7 @@
   --txt:#1a1a24; --muted:#5b5b6d; --ink:#0a0a14;
   --nav-bg:rgba(245,245,250,.85);
   --ghost-bg:rgba(0,0,0,.04); --ghost-bg-hover:rgba(0,0,0,.08);
-  --chip-bg:#0d0d16;
+  --chip-bg:#ffffff;
   --vid-tag-bg:rgba(255,255,255,.85);
   --glow-op:.2;
 }
@@ -87,7 +87,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 [data-theme="light"] .logo .logo-dark{display:none}
 [data-theme="light"] .logo .logo-light{display:block}
 .menu-btn{display:none;background:none;border:0;color:var(--ink);font-size:1.6rem;cursor:pointer}
-@media(max-width:880px){.nav-links{display:none}.menu-btn{display:block}}
+@media(max-width:880px){.nav-links{display:none}.menu-btn{display:block}.nav-links.open{display:flex;flex-direction:column;align-items:flex-start;gap:20px;position:absolute;top:100%;left:0;right:0;background:var(--nav-bg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:22px}}
 
 /* HERO */
 .hero{position:relative;text-align:center;padding:90px 0 40px}
@@ -103,7 +103,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
   mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
 .marquee-track{display:flex;gap:18px;width:max-content;animation:scroll 38s linear infinite}
 .marquee:hover .marquee-track{animation-play-state:paused}
-.chip{height:78px;min-width:150px;display:grid;place-items:center;background:var(--chip-bg);border-radius:14px;padding:14px 22px}
+.chip{height:78px;min-width:150px;display:grid;place-items:center;background:var(--chip-bg);border:1px solid var(--line);border-radius:14px;padding:14px 22px}
 .chip img{max-height:46px;max-width:120px;object-fit:contain}
 @keyframes scroll{to{transform:translateX(-50%)}}
 
@@ -421,22 +421,26 @@ const clients=[["japanim","client-japanim.png"],["O Bloc","client-obloc.jpg"],["
 const lt=document.getElementById('logos');
 [...clients,...clients].forEach(([n,f])=>{lt.insertAdjacentHTML('beforeend',`<div class="chip"><img src="images/clients/${f}" alt="${n}" loading="lazy"></div>`);});
 
-// vidéos — quand AVA fournira les embedUrl TikTok/Insta, remplir le champ embed.
-// Tant qu'il est vide, on affiche le placeholder visuel existant.
+// vidéos clients (clic = lecture AVEC le son — demande Ava 19/06)
 const videos=[
  {src:"videos/tellandcash.mp4"},
  {src:"videos/tigalik.mp4"},
- {src:"videos/bwburger.mp4"},
- {src:"videos/video04.mp4"},
+ {src:"videos/anas.mp4"},
+ {src:"videos/tellandcash2.mp4"},
 ];
 const vt=document.getElementById('vids');
 videos.forEach(v=>{
   const inner = v.src
-    ? `<video src="${v.src}" poster="${v.src.replace('videos/','videos/poster-').replace('.mp4','.jpg')}" muted loop playsinline preload="none" controls></video>`
+    ? `<video src="${v.src}" poster="${v.src.replace('videos/','videos/poster-').replace('.mp4','.jpg')}" loop playsinline preload="none" controls></video>`
     : v.embed
     ? `<iframe src="${v.embed}" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`
     : `<div class="play">▶</div>`;
   vt.insertAdjacentHTML('beforeend',`<div class="vid reveal">${inner}</div>`);
+});
+// son direct au clic + une seule vidéo à la fois (demande Ava 19/06)
+vt.querySelectorAll('video').forEach(vid=>{
+  vid.addEventListener('click',()=>{ if(vid.paused){ vid.muted=false; vid.volume=1; vid.play(); } });
+  vid.addEventListener('play',()=>{ vid.muted=false; vt.querySelectorAll('video').forEach(o=>{ if(o!==vid) o.pause(); }); });
 });
 
 // avis (placeholders à remplacer par les vrais une fois AVA aura fourni les verbatims)
